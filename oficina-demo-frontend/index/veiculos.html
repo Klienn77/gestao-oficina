@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestão de Veículos - Oficina Mecânica</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Seu CSS customizado -->
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+  <!-- Header com estilo Bootstrap -->
+  <header class="bg-dark text-white p-3 mb-4">
+    <div class="container">
+      <h1>Gestão de Veículos</h1>
+    </div>
+  </header>
+
+  <!-- Container principal do Bootstrap -->
+  <main class="container mt-4">
+    <div class="row">
+      <!-- Coluna para o formulário de cadastro -->
+      <div class="col-md-5 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title mb-3">Cadastro de Veículos</h2>
+            <!-- Formulário com estilos Bootstrap -->
+            <form id="formVeiculo">
+              <div class="mb-3">
+                <label for="clienteId" class="form-label">ID do Cliente:</label>
+                <input type="number" class="form-control" id="clienteId" name="cliente_id" placeholder="ID numérico do cliente proprietário" required />
+              </div>
+              <div class="mb-3">
+                <label for="marca" class="form-label">Marca:</label>
+                <input type="text" class="form-control" id="marca" name="marca" placeholder="Ex: Fiat, VW, Ford" required />
+              </div>
+              <div class="mb-3">
+                <label for="modelo" class="form-label">Modelo:</label>
+                <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Ex: Uno, Gol, Fiesta" required />
+              </div>
+              <div class="mb-3">
+                <label for="ano" class="form-label">Ano:</label>
+                <input type="number" class="form-control" id="ano" name="ano" placeholder="Ex: 2023" required />
+              </div>
+              <div class="mb-3">
+                <label for="placa" class="form-label">Placa:</label>
+                <input type="text" class="form-control" id="placa" name="placa" placeholder="Ex: BRA2E19" required />
+              </div>
+              <div class="mb-3">
+                <label for="cor" class="form-label">Cor:</label>
+                <input type="text" class="form-control" id="cor" name="cor" placeholder="Ex: Prata, Preto, Branco" required />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Cadastrar Veículo</button>
+            </form>
+            <!-- Elemento para exibir mensagens de feedback (alertas Bootstrap) -->
+            <div id="mensagemVeiculos" class="mt-3"></div> <!-- JS vai inserir alertas aqui -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna para a lista de veículos -->
+      <div class="col-md-7">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="card-title mb-3">Lista de Veículos</h2>
+            <!-- Tabela com estilos Bootstrap -->
+            <div class="table-responsive"> <!-- Para rolagem horizontal -->
+              <table id="tabelaVeiculos" class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>ID Veículo</th>
+                    <th>ID Cliente</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Placa</th>
+                    <th>Cor</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Linhas da tabela serão preenchidas via JavaScript -->
+                  <tr><td colspan="8">Carregando...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botão Voltar centralizado -->
+    <div class="text-center mt-4">
+      <!-- Link estilizado como botão Bootstrap -->
+      <a href="index.html" id="btn-voltar" class="btn btn-secondary">Voltar para a Página Inicial</a>
+    </div>
+
+  </main>
+
+  <!-- Bootstrap JS Bundle (inclui Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Seu JavaScript específico -->
+  <script src="../js/veiculos.js"></script>
+</body>
+</html>
+

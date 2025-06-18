@@ -1,0 +1,21 @@
+[
+  {
+    "cliente": {
+      "id": 1,
+      "nome": "João Mecânico",
+      "telefone": "11999999999",
+      "email": "joao@oficina.com"
+    },
+    "veiculos": [
+      {
+        "id": 101,
+        "marca": "Fiat",
+        "modelo": "Uno",
+        "ano": 2012,
+        "placa": "XYZ-5678",
+        "cor": "Branco"
+      }
+     
+    ]
+  }
+]

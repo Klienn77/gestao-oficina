@@ -1,0 +1,330 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #005f73;
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #005f8a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #edf6f9;
+  color: #023047;
+}
+
+td button {
+  background-color: #e63946;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+td button:hover {
+  background-color: #d62828;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dashboard-buttons a button {
+  padding: 15px 25px;
+  font-size: 1rem;
+  background-color: #0081a7;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dashboard-buttons a button:hover {
+  background-color: #005f73;
+}
+
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* --- Media Queries para Responsividade Básica --- */
+
+/* Estilos para telas menores (ex: tablets e celulares em paisagem) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px; /* Adiciona um pouco de padding lateral */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Reduz um pouco o tamanho do título principal */
+  }
+
+  .card {
+    padding: 15px; /* Reduz o padding interno dos cards */
+  }
+
+  /* Ajusta botões do dashboard para empilhar */
+  .dashboard-buttons {
+    flex-direction: column; /* Botões ficam um abaixo do outro */
+    align-items: stretch; /* Estica os botões para ocupar a largura */
+  }
+
+  .dashboard-buttons a button {
+    width: 100%; /* Garante que o botão ocupe toda a largura */
+    padding: 12px; /* Ajusta o padding */
+    font-size: 0.95rem;
+  }
+
+  /* Melhora a visualização da tabela em telas pequenas */
+  table, thead, tbody, th, td, tr {
+    display: block; /* Transforma a tabela em blocos */
+  }
+
+  thead tr {
+    position: absolute; /* Esconde o cabeçalho original */
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc; /* Adiciona borda a cada "linha" (bloco) */
+    margin-bottom: 15px;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee; /* Linha separadora entre "colunas" */
+    position: relative;
+    padding-left: 50%; /* Espaço para o label */
+    text-align: right; /* Alinha o valor à direita */
+  }
+
+  td:before {
+    /* Adiciona o label da coluna antes do valor */
+    position: absolute;
+    top: 12px; /* Ajusta posição vertical */
+    left: 10px; /* Ajusta posição horizontal */
+    width: 45%; /* Largura do label */
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    content: attr(data-label); /* Pega o label de um atributo data-label (precisa ser adicionado no JS) */
+  }
+
+  /* Adiciona data-label via JS ao criar as TDs. Exemplo em clientes.js:
+     tdNome.setAttribute('data-label', 'Nome');
+     tdTelefone.setAttribute('data-label', 'Telefone');
+     tdEmail.setAttribute('data-label', 'Email');
+     tdAcoes.setAttribute('data-label', 'Ações');
+     // Fazer similar para as outras tabelas
+  */
+
+  td button {
+      float: right; /* Alinha botão de excluir à direita */
+      margin-top: 5px;
+  }
+}
+
+/* Estilos para telas ainda menores (ex: celulares em retrato) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px; /* Reduz padding geral */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button,
+  input,
+  select {
+    font-size: 0.9rem; /* Ajusta tamanho da fonte em controles */
+  }
+
+  td {
+      padding-left: 40%; /* Ajusta espaço para label em telas muito pequenas */
+      font-size: 0.9rem;
+  }
+
+  td:before {
+      width: 35%;
+      font-size: 0.85rem;
+  }
+}
+
+/* --- Classes Utilitárias --- */
+
+/* Estilo para mensagens de feedback (sucesso/erro) */
+.mensagem {
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  display: none; /* Escondido por padrão */
+}
+
+.mensagem.sucesso {
+  background-color: #d4edda; /* Verde claro */
+  color: #155724; /* Verde escuro */
+  border: 1px solid #c3e6cb;
+  display: block;
+}
+
+.mensagem.erro {
+  background-color: #f8d7da; /* Vermelho claro */
+  color: #721c24; /* Vermelho escuro */
+  border: 1px solid #f5c6cb;
+  display: block;
+}
+
+/* Container para botões de ação (como Voltar) */
+.actions-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Estilo padrão para botões de voltar */
+.btn-voltar {
+  padding: 10px 20px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none; /* Caso seja usado em <a> */
+  display: inline-block;
+}
+
+.btn-voltar:hover {
+  background-color: #005f8a;
+}
+
+/* Estilo para botões de excluir dentro das tabelas */
+.btn-excluir {
+  background-color: #e63946;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-excluir:hover {
+  background-color: #d62828;
+}
+
+/* Estilo para cards de cliente na página clientesVeiculos */
+.cliente-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.cliente-card h3 {
+    margin-bottom: 10px;
+    color: #023047;
+}
+
+.cliente-card h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #023047;
+    font-size: 1rem;
+}
+
+.cliente-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cliente-card li {
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Adiciona um pouco mais de espaço abaixo dos labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+

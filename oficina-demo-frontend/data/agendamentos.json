@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "veiculo_id": 1,
+    "servico_id": 1,
+    "data_agendamento": "2025-06-10",
+    "hora": "09:00",
+    "status": "Confirmado",
+    "servico": "Troca de Óleo"
+  },
+  {
+    "id": 2,
+    "veiculo_id": 2,
+    "servico_id": 2,
+    "data_agendamento": "2025-06-15",
+    "hora": "14:00",
+    "status": "Pendente",
+    "servico": "Revisão Geral"
+  }
+]

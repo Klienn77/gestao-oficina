@@ -1,0 +1,9 @@
+[
+{
+  "id": 1,
+  "agendamento_id": 2,
+  "valor_total": 350.00,
+  "observacoes": "Troca de óleo e revisão básica",
+  "aprovado": false
+}
+]

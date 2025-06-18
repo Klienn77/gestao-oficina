@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "marca": "Volkswagen",
+    "modelo": "Gol",
+    "ano": 2015,
+    "placa": "ABC-1234",
+    "cor": "Prata",
+    "cliente_id": 1
+  },
+  {
+    "id": 2,
+    "marca": "Fiat",
+    "modelo": "Uno",
+    "ano": 2012,
+    "placa": "XYZ-5678",
+    "cor": "Branco",
+    "cliente_id": 2
+  }
+]

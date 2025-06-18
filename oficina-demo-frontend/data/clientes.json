@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "João Mecânico",
+    "telefone": "11999999999",
+    "email": "joao@oficina.com",
+    "created_at": "2024-01-15T10:00:00"
+  },
+  {
+    "id": 2,
+    "nome": "Maria Oficina",
+    "telefone": "11988888888",
+    "email": "maria@oficina.com",
+    "created_at": "2024-02-20T14:30:00"
+  },
+   {
+    "id": 3,
+    "nome": "Marcia Oficina",
+    "telefone": "1198888777",
+    "email": "marcia@oficina.com",
+    "created_at": "2024-03-20T14:30:00"
+  }
+]
