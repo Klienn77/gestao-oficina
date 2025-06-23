@@ -20,7 +20,7 @@ async function listarClientes() {
   tbody.innerHTML = "<tr><td colspan='4' class='text-center'>Carregando...</td></tr>";
 
   try {
-    const clientes = await fetchData("../data/clientes.json");
+    const clientes = await fetchData("data/clientes.json");
     tbody.innerHTML = "";
 
     if (!clientes || clientes.length === 0) {
@@ -32,9 +32,10 @@ async function listarClientes() {
       const tr = document.createElement("tr");
 
       tr.innerHTML = `
-        <td data-label="Nome">${cliente.nome}</td>
+       <td data-label="Nome">${cliente.nome}</td>
         <td data-label="Telefone">${cliente.telefone}</td>
         <td data-label="Email">${cliente.email}</td>
+        
         <td data-label="Ações"><button class="btn btn-sm btn-secondary" disabled>Simulação</button></td>
       `;
 

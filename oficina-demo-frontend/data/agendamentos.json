@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "veiculo_id": 1,
+    "cliente": "Fabiano",
+    "veiculo": "HB20 - FHQ0610",
     "servico_id": 1,
     "data_agendamento": "2025-06-10",
     "hora": "09:00",
@@ -10,7 +11,8 @@
   },
   {
     "id": 2,
-    "veiculo_id": 2,
+    "cliente": "Joarez",
+    "veiculo": "Passat - ABC1234",
     "servico_id": 2,
     "data_agendamento": "2025-06-15",
     "hora": "14:00",

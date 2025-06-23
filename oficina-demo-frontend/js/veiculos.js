@@ -20,7 +20,7 @@ async function listarVeiculos() {
   tbody.innerHTML = "<tr><td colspan='5' class='text-center'>Carregando...</td></tr>";
 
   try {
-    const veiculos = await fetchData("../data/veiculos.json");
+    const veiculos = await fetchData("data/veiculos.json");
     tbody.innerHTML = "";
 
     if (!veiculos || veiculos.length === 0) {
@@ -32,10 +32,15 @@ async function listarVeiculos() {
       const tr = document.createElement("tr");
 
       tr.innerHTML = `
-        <td data-label="Placa">${veiculo.placa}</td>
+        <td data-label="IdVeiculo">${veiculo.id}</td>
+        <td data-label="IdCliente">${veiculo.id}</td>
         <td data-label="Marca">${veiculo.marca}</td>
         <td data-label="Modelo">${veiculo.modelo}</td>
         <td data-label="Ano">${veiculo.ano}</td>
+        <td data-label="Placa">${veiculo.placa}</td>
+        <td data-label="Cor">${veiculo.cor}</td>
+
+
         <td data-label="Ações"><button class="btn btn-sm btn-secondary" disabled>Simulação</button></td>
       `;
 

@@ -20,8 +20,8 @@ async function listarClientesVeiculos() {
   container.innerHTML = "<p class='text-center'>Carregando dados...</p>";
 
   try {
-    const clientes = await fetchData("../data/clientes.json");
-    const veiculos = await fetchData("../data/veiculos.json");
+    const clientes = await fetchData("data/clientes.json");
+    const veiculos = await fetchData("data/veiculos.json");
 
     if (!clientes.length) {
       container.innerHTML = "<p class='text-muted text-center'>Nenhum cliente cadastrado.</p>";

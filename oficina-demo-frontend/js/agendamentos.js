@@ -20,7 +20,7 @@ async function listarAgendamentos() {
   tbody.innerHTML = "<tr><td colspan='5' class='text-center'>Carregando...</td></tr>";
 
   try {
-    const agendamentos = await fetchData("../data/agendamentos.json");
+    const agendamentos = await fetchData("data/agendamentos.json");
     tbody.innerHTML = "";
 
     if (!agendamentos || agendamentos.length === 0) {
@@ -32,11 +32,13 @@ async function listarAgendamentos() {
       const tr = document.createElement("tr");
 
       tr.innerHTML = `
+        <td data-label="ID">${ag.id}</td>
         <td data-label="Cliente">${ag.cliente}</td>
         <td data-label="Veículo">${ag.veiculo}</td>
-        <td data-label="Data">${ag.data}</td>
+        <td data-label="Data">${ag.data_agendamento}</td>
         <td data-label="Hora">${ag.hora}</td>
         <td data-label="Serviço">${ag.servico}</td>
+        <td data-label="Status">${ag.status}</td>
       `;
 
       tbody.appendChild(tr);
